@@ -30,4 +30,15 @@
 
 # author: Conall O'Brien (conall@conall.net)
 
+PUSHOVER=$(which pushover_client.py)
+PUSHOVER_CFG=/usr/local/etc/pushover_client.cfg
+
+# Import the ssh-agent, throwing away the output
+source ${HOME}/.ssh/agent-env >/dev/null 2>&1
+
+# Send a notification before we proceed
+${PUSHOVER} --flagfile=${PUSHOVER_CFG} \
+  -M "Rebooting Taku Unifi USG"
+
+# Now reboot
 ssh 192.168.1.1 "reboot now"
