@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local//bin/bash
 # vim:ts=2:sw=2:expandtab:ft=sh:fileencoding=utf-8
 
 # $Id$
@@ -41,4 +41,4 @@ ${PUSHOVER} --flagfile=${PUSHOVER_CFG} \
   -M "Rebooting Taku Unifi USG"
 
 # Now reboot
-ssh 192.168.1.1 "reboot now"
+ssh 192.168.1.1 "/usr/bin/sudo /sbin/shutdown -r now"
