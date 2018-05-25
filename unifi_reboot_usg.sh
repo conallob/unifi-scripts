@@ -41,4 +41,4 @@ ${PUSHOVER} --flagfile=${PUSHOVER_CFG} \
   -M "Rebooting Taku Unifi USG"
 
 # Now reboot
-ssh 192.168.1.1 "/usr/bin/sudo /sbin/shutdown -r now"
+ssh 192.168.1.1 "/usr/bin/sudo /sbin/shutdown -r +1"
